@@ -96,14 +96,7 @@ const DispatchBookings = () => {
       if (!response.ok) throw new Error('Dispatch failed');
   
       const data = await response.json();
-  
-      alert('Bookings dispatched successfully!');
-      fetchBookings();         // Refresh list
-      setSelected([]);         // Reset selection
-      setDispatchedbox(false); // Hide box
-  
-      // ✅ Automatically open new dispatch bill
-      if (data.dispatchLogId) {
+       if (data.dispatchLogId) {
         window.open(
           `${process.env.REACT_APP_API_URL}/api/bookings/dispatch-bill/${encodeURIComponent(data.dispatchLogId)}/pdf`,
           '_blank'
@@ -111,6 +104,13 @@ const DispatchBookings = () => {
         setShowTable(false);
         
       }
+      alert('Bookings dispatched successfully!');
+      fetchBookings();         // Refresh list
+      setSelected([]);         // Reset selection
+      setDispatchedbox(false); // Hide box
+  
+      // ✅ Automatically open new dispatch bill
+     
     } catch (err) {
       console.error('Dispatch error:', err);
       alert('Error dispatching bookings');
