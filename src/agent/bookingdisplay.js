@@ -66,7 +66,7 @@ const SingleBookingSearch = () => {
     };
 
     if (lrNo) fetchBooking();
-  });
+  },[]);
   const printLrCopy = () => {
     if (!booking?.lrNo) {
       return;
@@ -77,40 +77,39 @@ const SingleBookingSearch = () => {
   const date = booking?.createdAt?.split('T')[0] || '';
 
   return (
-    <div className="booking-search-container">
-      <div className='logout'>
-        <LogoutButton />
-      </div>
+    <div className="booking-container">
+      
       <h2 className="booking-heading">
         Welcome To Shree Sathguru Tours And Travels<span className="arrow-icon">➤</span>
       </h2>
-
-      <div className='option'>
-        <OptionNavbar setBooking={setBooking} />
+      <div className='logout'>
+        <LogoutButton />
       </div>
 
+      
+        <OptionNavbar setBooking={setBooking} />
+      
+      <div className='booking-form'>
       {booking && (
         <>
-          <div className='form-section1' style={{ left: '50px', top: '60px' }}>
+          <div className='form-section1' >
             <h3>From-To</h3>
             <input value={booking.fromStation} readOnly />
             <p>TO</p>
             <input value={booking.toStation} readOnly />
           </div>
-          <div className="form-section1" style={{width:'150px',border:'none',borderRadius:'5px',backgroundColor:'transparent',boxShadow:'none',textAlign:'center',fontSize:'16px',fontWeight:'bold',color:'#333',outline:'none',left:'640px',top:'240px',position:'absolute'}}>
+          <div className="form-section1-type" >
           <h3>Type :</h3>
           <input type="text" name="TYPE" placeholder="Name" value={booking.type} required style={{width:'100px',height:'10px',border:'none',borderRadius:'5px', backgroundColor: getBgColor(booking.type),textAlign:'center',fontSize:'14px',fontWeight:'bold',color:'#fff',outline:'none'}} readOnly/>
-
-        </div>
-        <div className="form-section1" style={{width:'150px',border:'none',borderRadius:'5px',backgroundColor:'transparent',boxShadow:'none',textAlign:'center',fontSize:'16px',fontWeight:'bold',color:'#333',outline:'none',left:'780px',top:'229px',position:'absolute'}}>
           <input type="text" name="TYPE" placeholder="Name" value={booking.status} required style={{width:'100px',height:'10px',border:'none',borderRadius:'5px', backgroundColor: getBgColor(booking.status),textAlign:'center',fontSize:'14px',fontWeight:'bold',color:'#fff',outline:'none'}} readOnly/>
-            <p style={{left:'-20px',marginRight:'-60px'}}>By</p> :
+            <p >By</p> -
             <input type="text" name="TYPE" placeholder="Name" value={booking.dispatch_logs[0]?.busNo || date} required style={{width:'100px',height:'10px',border:'none',borderRadius:'5px', backgroundColor: getBgColor(booking.status),textAlign:'center',fontSize:'14px',fontWeight:'bold',color:'#fff',outline:'none',left:'-40px'}} readOnly/>
 
         </div>
+       
 
-          <div className="details" style={{ gap: '100px', position: 'relative', top: '30px' }}>
-            <div className='form-section2' style={{ left: '50px', rowGap: '10px' }}>
+          <div className="details" >
+            <div className='form-section2' >
               <h3>Sender detail :</h3>
               <input value={booking.senderName} readOnly />
               <input value={booking.senderPhone} readOnly />
@@ -127,8 +126,8 @@ const SingleBookingSearch = () => {
             </div>
           </div>
 
-          {booking.parcels && booking.parcels.map((parcel, idx) => (<div className='form-section3' key={idx} style={{ left: '50px', top: '30px', position: 'relative' }}>
-            <h3 style={{ position: 'relative', left: '-5px', top: '-10px' }}>Parcel detail :</h3>
+          {booking.parcels && booking.parcels.map((parcel, idx) => (<div className='form-section3' key={idx}>
+            <h3 >Parcel detail :</h3>
            
               
                 <input value={parcel.articleType} readOnly />
@@ -147,7 +146,7 @@ const SingleBookingSearch = () => {
             <input value={`₹${booking.parcels[0].total}`} readOnly />
           </div>
 
-          <div className="action-buttons">
+          <div className="form-footer">
   <button className="print-btn" onClick={printLrCopy}>Print LR</button>
 
   {booking?.status === 'Booked' && (
@@ -160,7 +159,7 @@ const SingleBookingSearch = () => {
 </div>
 
         </>
-      )}
+      )}</div>
     </div>
   );
 };

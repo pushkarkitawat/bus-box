@@ -11,6 +11,7 @@ const BookingList = () => {
   const [customTo, setCustomTo] = useState('');
   const stored = localStorage.getItem('agentInfo');
   const agentName = stored ? JSON.parse(stored) : null;
+  const [total,setTotal] = useState('');
   
   useEffect(() => {
     fetchBookings();
@@ -21,12 +22,14 @@ const BookingList = () => {
     try {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/api/bookings?filter=today`);
       const data = await res.json();
-      setBookings(data);
-      setFilteredBookings(bookings);
+      setBookings(data.data);
+      setTotal(data.grandTotalAmount); // Use grandTotalAmount if that's what you return
+      setFilteredBookings(data.data);  // Use the latest fetched data directly
     } catch (err) {
       console.error('Error fetching bookings:', err);
     }
   };
+  
   
   
   const formatDate = (date) => {
@@ -84,8 +87,9 @@ const BookingList = () => {
         `${process.env.REACT_APP_API_URL}/api/bookings?from=${fromDate}&to=${toDate}`
       );
       const data = await response.json();
-      setBookings(data);
-      setFilteredBookings(data);
+      setBookings(data.data);
+      setTotal(data.grandTotalAmount);
+      setFilteredBookings(data.data);
     } catch (err) {
       console.error('Error fetching filtered bookings:', err);
     }
@@ -202,6 +206,7 @@ const BookingList = () => {
             <th className='station-th'>Dispatch By</th>
             <th className='station-th'>Dispatch Date</th>
             <th className='station-th'>Dilevery Date</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -271,13 +276,20 @@ const BookingList = () => {
     >
       {getDeliveredOrCancelledDate(booking.logs)}
     </td>
+    
               </tr>
             ))
+            
           ) : (
             <tr>
               <td className='station-td' colSpan="12">No bookings found.</td>
             </tr>
           )}
+          <tr>
+  <td colSpan="10" style={{ textAlign: 'right', fontWeight: 'bold' }}>Grand Total:</td>
+  <td className='station-td' style={{ fontWeight: 'bold' }}>₹{total}</td>
+</tr>
+
         </tbody>
       </table>
     </div>

@@ -1,11 +1,14 @@
 .booking-container{
     margin: 0 auto;
-    width: 100vw;
-    height: 100vh;
+    width: clamp(300dwv,100vw,1500px);
+    height: clamp(auto,100vh,1300px);
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-items: center;
     margin-top: 20px;
-
+  justify-content: space-between;
     overflow-y: scroll;
     font-family: 'Inter', sans-serif;
     background-color:whitesmoke;
@@ -16,16 +19,17 @@
   font-size: 30px;
   color: #0f1e3d; /* Deep navy blue for professional tone */
   font-weight: 600;
-  margin-left: 40px;
-  margin-bottom: 20px;
+ 
   border-left: 4px solid #041b34; 
   border-right: 4px solid #041b34;/* Accent border */
   padding-left: 15px;
   padding-right: 15px;
   letter-spacing: 0.5px;
+  flex: 0 1 auto;
+ margin: 10px 10px 20px 10px;
   justify-self: left;
   position: relative;
-  top: -30px;
+ 
 }
 .dispatch-container h2 {
   font-family: 'Poppins', sans-serif;
@@ -37,7 +41,7 @@
   border-left: 5px solid #007BFF;
   padding-left: 15px;
   letter-spacing: 0.5px;
-  display: flex;
+  flex: 0 1 auto;
   align-items: center;
   gap: 10px;
 }
@@ -57,9 +61,10 @@
 
 
 .booking-form{
-    width: 100vw;
+    width: clamp(400px,100vw,100vw);
+    
     height: 100vh;
-    margin-left: 100px;
+    margin-left: 5px;
 
 }
 /* Chrome, Safari, Edge, Opera */
@@ -86,9 +91,12 @@
 .form-section1{
     top: 50px;
     display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
     position: relative;
-    width: 500px;
-    gap: 50px;
+    margin: 10px 10px;
+    width: clamp(250px,450px,500px);
+    gap: min(20px,20%);
     max-height: 100px;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 10px;
@@ -97,6 +105,21 @@
     align-items: center;
     box-shadow: 0px 1px 10px #ddd;
 }
+.form-section1-type{
+  position: relative;
+  display: flex;
+  gap: 20px;
+  width: clamp(200px,500px);
+  
+  flex: 0 1 auto;
+  left: 620px;
+ 
+  top: -80px;
+  margin-bottom: -20px;
+  
+}
+
+
 .booking-form textarea {
   width: 100%;
   max-width: 500px;
@@ -116,13 +139,14 @@
   box-shadow: 0px 1px 10px #ddd;
 }
 
-.form-section1 h3{
+.form-section1 h3,.form-section1-type h3{
     position: absolute;
     text-align: left;
     top: -50px;
     left: 30px;
+
 }
-.form-section1 input{
+.form-section1 input,.form-section1-type input{
     position:relative;
     display: flex;
     flex-direction: column;
@@ -145,38 +169,34 @@
 }
 .form-section2 {
     top: 50px;
-    display: grid;
+    flex: 0 1 auto;
+    margin-right: 50px;
     position: relative;
-    width: 500px;
+    width: clamp(300px,500px,500px);
     height: auto;
-    grid-template-columns: repeat(2, 2fr); /* Two equal columns */
-    grid-gap: 20px  10px;
+    margin-left: 10px;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom:100px;
+    padding: 10px;
+    margin-bottom:max(100px,10%);
     box-shadow: 0px 1px 10px #ddd;
-    align-items: start;
+    align-items: center;
   
   }
-  .form-section2:nth-child(2){
-    margin-left: -250px;
-    
-  }
+ 
   .form-section4 {
-    justify-self: right;
+    justify-self: left;
 
-    display: grid;
-    position: absolute;
-    width: 150px;
+    flex: 0 1 auto;
+    position: relative;
+    width: clamp(150px,150px,200px);
     height: 250px;
-    grid-template-columns: repeat(1, 1fr); /* Two equal columns */
-    grid-gap: 20px ;
+    
     border: 1px solid rgb(165, 165, 165);
     border-radius: 10px;
     padding: 20px;
-    top: 300px;
-    right: 100px;
+   
+    margin: 10px;
     align-items: start;
     box-shadow: 0px 1px 10px #ddd;
   
@@ -184,6 +204,7 @@
   .form-section4 input{
     position: relative;
     height: 20px;
+    margin: 10px;
     border-radius: 5px;
     width: 120px;
     border: none;
@@ -218,14 +239,12 @@
     font-size: 14px;
     border: none;
     border-radius: 5px;
-   
-    width: 200px;
+    margin: 5px 5px;
+    width:clamp(150px,200px,200px);
     box-sizing: border-box;
   }
-  .form-section2 input:nth-child(3){
-    position: relative;
-    left: -100px;
-  }
+  
+ 
   .form-section2 input:nth-child(2){
     width: 250px;
   }
@@ -235,36 +254,50 @@
   }
   
   /* Make certain inputs span both columns */
-  .sender-gst,
-  .sender-address {
-    grid-column: span 2;
-  }
+  
   .details{
-    display: grid;
-    grid-template-columns: repeat(2,2fr);
-    row-gap: 8px;
+    display: flex;
+    position: relative;
+    
+    width: min(1200px,100vw);
+    flex-wrap: wrap;
+    
     
   }
   .form-section3{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    width: 1000px;
-    height: 50px;
+    
+    display: flex;
+    
+    width: clamp(400px,800px,800px);
+    height:50px;
+    flex: 0 1 auto;
+    margin-left: 10px;
+    align-items: center;
+   
     margin-top: 10px;
     padding: 20px;
     border: 1px solid rgb(165, 165, 165);
-    grid-gap: 20px 30px;
+   
     border-radius: 5px;
-    margin-bottom: 50px;
+   
     
   }
   .form-section3 h3{
-    position:absolute;
-    top: 540px;
-    left: 78px;
+    flex: 0 1 auto;
+    position:relative;
+    top: -80px;
+    min-width: 150px;
+    height: 20px;
+    
+   
+    margin-right: -150px;
+   
   }
   .form-section3 input{
+    display: flex;
+    margin: 10px;
     width: 150px;
+    position: relative;
     border-radius: 5px;
     height: 30px;
     width: 130px;
@@ -274,8 +307,10 @@
   .form-section3 button{
     background-color: #ea0b0bda;
     border: none;
+    position: relative;
     border-radius: 5px;
     color: white;
+    
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -287,15 +322,15 @@
     background-color: rgba(255, 0, 0, 0.85);
     box-shadow: 0px 1px 10px #a6a5a5;
   }
-  
+ 
 
   .parcel-table {
     position: relative;
-  
-    width: 100%;
-    border-collapse: collapse;
     
-    margin-top: 60px;
+    width: 100%;
+    border-collapse:collapse;
+    
+    margin-top: 20px;
   }
   
   .parcel-table th,
@@ -311,14 +346,15 @@
   }
   .parcel-list{
     position: relative;
-    top: -100px;
+    
 
   }
   .form-footer {
     display: flex;
     justify-content: left;
     position: relative; /* Aligns button to the right */
-    top: -50px;
+    top: 10px;
+
     padding: 10px 0;
     border-top: 1px solid #e0e0e0;
   }
@@ -382,42 +418,71 @@
   }
 
   .form-section3 select{
-    width:130px;
+    flex: 0 1 auto;
+    width:clamp(100px,150px,150px);
     height: 38px;
     outline: none;
+    position: relative;
+    
     box-shadow: 0px 1px 10px #ddd;
     border-radius: 5px;
-    margin-top: 2px;
+   
     border: 1px solid #dddd;
     
     font-family: 'Inter', sans-serif;
     
   }
   .form-section5{
-    width: 500px;
+    width: clamp(300px,500px,500px);
     position: relative;
-    margin-bottom: 100px;
-   
-    top: 50px;
+    margin-left: 10px;
+    height: auto;
+    margin-bottom: 50px;
+    flex: 0 1 auto;
+    
     border-radius: 10px;
     
   }
   
   .form-section5 table{
-border-radius: 10px;
+    
+   
+    border-radius: 10px;
   }
   .dropdown-list li:hover ,.dropdown-list2 li:hover{
     background-color: #f0f0f0;
   }
   .logout{
     position: relative;
-    justify-self: right;
+    flex: 0 1 auto;
+
+    justify-content: right;
     margin-right: 50px;
-    top: 30px;
+    top: 5px;
+    margin-bottom: 10px;
   }
   button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
   
-
+  @media (max-width:746px) {
+    .form-section3{
+      display: inline-flex;
+      
+    }
+    .form-footer{
+      justify-self: center;
+    }
+    .logout{
+      
+      justify-content: left;
+    }
+    .form-section1-type{
+      left: 10px;
+      top: 35px;
+      margin: 25px;
+      margin-bottom: 20px;
+    }
+    
+  }

@@ -1,0 +1,95 @@
+.login-navbar{
+    background-color:rgb(255, 255, 255);
+    width: 100vw;
+    height: 50px;
+    left: -30px;
+    display: flex;
+    position: absolute;
+    margin: 0;
+    display: flex;
+    border: 1px solid rgb(194, 194, 194);
+    box-shadow: 1px 1px 10px #959595;
+    align-items: center;
+    justify-content: space-between;
+}
+.login-navbar-logo{
+    left: 100px;
+    position: relative;
+    flex: 0 1 auto;
+
+}
+.login-navbar-title{
+    position: relative;
+   flex: 0 1 auto;
+    width: 500px;
+    height: 50px;
+    gap: 10px;
+    margin-right: 100px;
+    flex-direction: column;
+}
+.links{
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+    display: inline-flex;
+    margin-right: 100px;
+
+    flex: 0 1 auto;
+}
+
+.links ul  {
+   
+   display: flex;
+  
+    
+    gap: 80px;
+}
+.links ul li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    
+}
+.links ul li:hover{
+    color: rgb(167, 167, 167);
+    
+}
+.login-navbar-logo h1{
+    perspective: 1000;
+    color: rgb(53, 53, 243);
+    text-shadow: 1px 1px 5px rgb(93, 92, 92);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+@media (max-width:746px) {
+    .login-navbar{
+        height: 40px;
+        font-size: 14px;
+        
+    }
+    .login-navbar-logo{
+        width: 100%;
+        left: 20px;
+    }
+    .login-navbar-logo h1{
+        font-size: 26px;
+        align-self: flex-start;
+        
+    }
+    .links{
+        left: 50px;
+    }
+    .links ul{
+        width: 100px;
+        justify-items: left;
+        gap: 20px;
+    }
+    .links ul li {
+        
+        font-size: 16px;
+    }
+    
+    
+}

@@ -1,0 +1,108 @@
+.aboutpage {
+    width: 100%;
+    min-height: 100vh;
+    background: #f9fafb;
+    font-family: Arial, sans-serif;
+    color: #111;
+    line-height: 1.6;
+  }
+  
+  /* Hero */
+  .about-hero {
+    background: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .about-hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  /* Mission & Vision */
+  .mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .mv-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .mv-card h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .mv-card p {
+    color: #555;
+  }
+  
+  .mv-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .mv-icon.red { color: #ef4444; }
+  .mv-icon.blue { color: #2563eb; }
+  
+  /* Why Us */
+  .why-us {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #f3f4f6;
+  }
+  
+  .why-us h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .why-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .why-card h3 {
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+  }
+  
+  .why-card p {
+    color: #555;
+  }
+  
+  .why-icon {
+    font-size: 2rem;
+  }
+  .why-icon.green { color: #16a34a; }
+  .why-icon.yellow { color: #f59e0b; }
+  .why-icon.purple { color: #7c3aed; }
+  

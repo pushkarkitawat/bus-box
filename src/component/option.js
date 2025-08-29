@@ -6,7 +6,6 @@ const OptionNavbar = ({ onStatusSelect, setBooking, setError }) => {
   const [lrNoInput, setLrNoInput] = useState('');
   const navigate = useNavigate();
   const [admin, setAdmin] = useState(false);
-
   
   
   const handleStatusClick = (status) => {
@@ -95,7 +94,7 @@ useEffect(()=>{
         </ul>
       </div>
 
-      <div >
+      <div className='search'>
   <form
     onSubmit={(e) => {
       e.preventDefault(); // Prevent page reload
@@ -110,7 +109,7 @@ useEffect(()=>{
       className="search-box"
     />
   </form>
-</div>
+      </div>
 
     </nav>
   );

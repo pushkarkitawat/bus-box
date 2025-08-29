@@ -21,6 +21,28 @@ export const BackButton = () => {
     </button>
   );
 };
+export const BackButton2 = () => {
+  const navigate = useNavigate();
+
+  return (
+    <button
+      onClick={() => navigate(-1)}
+      style={{
+        backgroundColor:'transparent',
+        border:'none',
+        cursor:'pointer',      
+        color:'white',
+        fontWeight:'bold',
+        marginRight:'10px',
+        fontSize:'30px',
+        marginTop:'10px',  
+      }}
+      
+    >
+    <span>&#8592;</span>
+    </button>
+  );
+};
 
 export const HomeButton = () => {
   const navigate = useNavigate();

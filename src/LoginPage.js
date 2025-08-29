@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
 import { useNavigate } from 'react-router-dom';
+import Loginnavbar from './loginnavbar';
+import Footer from './footer';
 
 const LoginPage = () => {
   const [name, setname] = useState('');
@@ -60,6 +62,7 @@ const LoginPage = () => {
       if (res.ok) {
         localStorage.setItem('agentToken', data.token);
         localStorage.setItem('agentInfo', JSON.stringify(data.user));
+       
         navigate('/booking');
       } else {
         alert(data.message);
@@ -73,8 +76,10 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
+      <div className='navbar'><Loginnavbar/></div>
+      
       <div className="login-background">
-        <img src='/sathguruimage.png' width="1100px" height="600px" style={{ borderRadius: '10px' }} alt="Logo" />
+        <img src='/sathguruimage.png'  style={{ borderRadius: '10px' }} alt="Logo" />
       </div>
       <div className="login-box">
         <h2 className="login-title">Agent Login</h2>
@@ -128,6 +133,10 @@ const LoginPage = () => {
           <button type="submit" className="login-button">Login</button>
         </form>
       </div>
+      <div className='footer2'>
+      <Footer/>
+      </div>
+      
     </div>
   );
 };

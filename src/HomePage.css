@@ -1,0 +1,124 @@
+/* General */
+.homepage {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f9fafb; /* gray-50 */
+    font-family: Arial, sans-serif;
+    color: #111;
+    line-height: 1.6;
+  }
+  .back{
+    position: absolute;
+    justify-self: right;
+    top: 20px;
+    right: 30px;
+
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .hero-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  
+  .book-btn {
+    background-color: white;
+    color: #2563eb;
+  }
+  
+  .book-btn:hover {
+    background-color: #e5e7eb; /* gray-200 */
+  }
+  
+  .track-btn {
+    background-color: #facc15; /* yellow-400 */
+    color: #111;
+  }
+  
+  .track-btn:hover {
+    background-color: #fde047; /* yellow-300 */
+  }
+  
+  /* Features */
+  .features {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .feature:hover{
+    box-shadow: 2px 2px 5px rgb(222, 222, 222),
+    -2px -2px 10px rgb(226, 226, 226);
+  }
+  .features h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+  
+  .feature {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .feature h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .feature p {
+    margin-top: 0.5rem;
+    color: #6b7280; /* gray-600 */
+  }
+  
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .icon.blue { color: #2563eb; }
+  .icon.green { color: #16a34a; }
+  .icon.yellow { color: #f59e0b; }
+  .icon.red { color: #ef4444; }
+  
+  /* How It Works */
+ 

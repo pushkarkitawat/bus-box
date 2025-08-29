@@ -211,11 +211,12 @@ const Booking = () => {
 
   return (
     <div className="booking-container">
-      <div className='logout'>
-      <LogoutButton /></div>
       <h2 className="booking-heading" style={{borderLeftColor:getBgColor(form.type)}}>
   Welcome To Shree Sathguru Tours And Travels<span className="arrow-icon" style={{color:getBgColor(form.type)}}>➤</span>
 </h2>
+      <div className='logout'>
+      <LogoutButton /></div>
+      
 
       <OptionNavbar onStatusSelect={handleStatusSelect}/> 
 
@@ -268,7 +269,7 @@ const Booking = () => {
             </ul>
           )}
         </div>
-        <div className="form-section1" style={{width:'150px',border:'none',borderRadius:'5px',backgroundColor:'transparent',boxShadow:'none',textAlign:'center',fontSize:'16px',fontWeight:'bold',color:'#333',outline:'none',left:'640px',top:'210px',position:'absolute'}}>
+        <div className="form-section1-type" >
           <h3>Type :</h3>
           <input type="text" name="TYPE"  value={status} readOnly required style={{width:'100px',height:'10px',border:'none',borderRadius:'5px', backgroundColor: getBgColor(form.type),textAlign:'center',fontSize:'14px',fontWeight:'bold',color:'#fff',outline:'none'}}/>
 

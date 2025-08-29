@@ -108,6 +108,8 @@ const DispatchBookings = () => {
           `${process.env.REACT_APP_API_URL}/api/bookings/dispatch-bill/${data.dispatchLogId}/pdf`,
           '_blank'
         );
+        setShowTable(false);
+        
       }
     } catch (err) {
       console.error('Dispatch error:', err);
@@ -140,12 +142,12 @@ const DispatchBookings = () => {
   
   return (
     <div className="dispatch-container">
-      <div className={`dispatch-container ${dispatchedbox ? 'blurred' : ''}`}>
+      <div className={`dispatch-container2 ${dispatchedbox ? 'blurred' : ''}`}>
       <h2 className="booking-heading" >
   Welcome To Shree Sathguru Tours And Travels<span className="arrow-icon" >➤</span>
 </h2>
 
-      <div className='option-bar' style={{left:'-50px'}}><OptionNavbar/></div>
+      <OptionNavbar/>
       
       <div className="dispatch-box">
   <h2 style={{fontSize:'20px'}}>Dispatch <span className="arrow-icon" >➤</span></h2>
@@ -226,7 +228,7 @@ const DispatchBookings = () => {
     <h2 >Dispatch Bookings <span className="arrow-icon" >➤</span></h2>
 
     {/* Display selected Bus No */}
-    <div style={{ position: 'relative', width: '300px' }}>
+    <div className='dispatchedboxes'>
       <label>Bus No: </label>
       <input
         type="text"
@@ -244,8 +246,8 @@ const DispatchBookings = () => {
           style={{
             listStyle: 'none',
             padding: 0,
-            margin: 10,
-            position: 'absolute',
+            margin: 1,
+            position: 'relative',
             width: '100%',
             maxHeight: '150px',
             overflowY: 'auto',
@@ -278,8 +280,8 @@ const DispatchBookings = () => {
     </div>
 
     {/* Optional: Show all destination stations of selected bookings */}
-    <div style={{maxHeight:'220px',overflowY:'auto'}}>
-  <label>Destinations:</label>
+    <div className='dispatchedboxes'>
+ 
   <table className="dispatch-table" style={{boxShadow:'none'}}>
     <thead>
       <tr>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {  useNavigate } from 'react-router-dom';
 import './reset.css';
+import '../agent/booking.css';
+import '../component/OptionNavbar.css';
 import LogoutButton from '../component/logout';
 import OptionNavbar from '../component/option';
 
@@ -46,16 +48,16 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="reset-password-container">
-         <div className='logout'>
-      <LogoutButton /></div>
+    <div className="booking-container">
+       
       <h2 className="booking-heading" >
   Welcome To Shree Sathguru Tours And Travels<span className="arrow-icon">➤</span>
-</h2>
-<div className='option' >
-      <OptionNavbar /> </div>
+</h2>  
+<div className='logout'>
+      <LogoutButton /></div>
+<OptionNavbar />
 <div className='reset-section'>
-      <h2>Reset Password</h2>
+      <h3>Reset Password</h3>
       {message && <p className="success">{message}</p>}
       {error && <p className="error">{error}</p>}
 

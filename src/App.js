@@ -10,6 +10,9 @@ import DispatchBookings from './loading';
 import SingleBookingSearch from './agent/bookingdisplay';
 import ResetPassword from './agent/reset';
 import { useEffect } from 'react';
+import HomePage from './home';
+import AboutPage from './about';
+import ContactPage from './contactpage';
 
 function App() {
 
@@ -46,6 +49,9 @@ function App() {
     <Router>
     <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/Home" element={<HomePage />} />
+      <Route path="/About" element={<AboutPage />} />
+      <Route path="/Contact" element={<ContactPage />} />
       <Route path="/booking" element={<Booking/>} />
       <Route path="/loading" element={<DispatchBookings/>} />
       <Route path="/search" element={<SingleBookingSearch/>}/>
