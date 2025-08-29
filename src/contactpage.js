@@ -30,7 +30,7 @@ const ContactPage = () => {
           <h2>Get in Touch</h2>
           <p>We’re here to help and answer any questions you might have.</p>
           <ul>
-            <li><FaEnvelope className="icon" /> busboxsuppot@Gmail.com</li>
+            <li><FaEnvelope className="icon" /> busboxsupport@Gmail.com</li>
             <li><FaPhoneAlt className="icon" /> +91 9004230913</li>
             <li><FaMapMarkerAlt className="icon" /> Mumbai, India</li>
           </ul>
