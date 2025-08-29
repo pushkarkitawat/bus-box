@@ -105,7 +105,7 @@ const DispatchBookings = () => {
       // ✅ Automatically open new dispatch bill
       if (data.dispatchLogId) {
         window.open(
-          `${process.env.REACT_APP_API_URL}/api/bookings/dispatch-bill/${data.dispatchLogId}/pdf`,
+          `${process.env.REACT_APP_API_URL}/api/bookings/dispatch-bill/${encodeURIComponent(data.dispatchLogId)}/pdf`,
           '_blank'
         );
         setShowTable(false);
