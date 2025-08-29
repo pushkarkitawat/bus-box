@@ -96,14 +96,15 @@ const DispatchBookings = () => {
       if (!response.ok) throw new Error('Dispatch failed');
   
       const data = await response.json();
-       if (data.dispatchLogId) {
+      alert('id ${data.dispatchLogId');
+       const url = `${process.env.REACT_APP_API_URL}/api/bookings/dispatch-bill/${encodeURIComponent(data.dispatchLogId)}/pdf`;
         window.open(
-          `${process.env.REACT_APP_API_URL}/api/bookings/dispatch-bill/${encodeURIComponent(data.dispatchLogId)}/pdf`,
+          url,
           '_blank'
         );
         setShowTable(false);
         
-      }
+     
       alert('Bookings dispatched successfully!');
       fetchBookings();         // Refresh list
       setSelected([]);         // Reset selection
